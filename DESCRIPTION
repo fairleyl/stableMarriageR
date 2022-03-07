@@ -9,3 +9,4 @@ Description: Implementation of the Stable Matching algorithm from "Stable Marria
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.8)
 LinkingTo: Rcpp
+C++ Version: C++11
