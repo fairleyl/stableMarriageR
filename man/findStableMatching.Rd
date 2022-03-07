@@ -6,7 +6,7 @@ Finds a stable matching, formulated as a list of string vectors, given two prefe
 }
 \description{
 Does not check validity of preference tables by default, use argument checkTables = T to ensure that the given tables are compatible. Note that this impacts performance.
-The raw underlying C++ function can be called as "stableMatching(pref1,pref2)"", but has no inbuilt capability for checking validity of the arguments.
+The raw underlying C++ function can be called as "stableMatching(pref1,pref2)"", but has no inbuilt capability for checking validity of the arguments, and cannot be interrupted striaght away.
 }
 \usage{
 findStableMatching(pref1, pref2, checkTables = F)	
