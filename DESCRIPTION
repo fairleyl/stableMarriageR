@@ -1,0 +1,11 @@
+Package: stableMarriage
+Type: Package
+Title: Implementation of the Stable Matching algorithm
+Version: 1.0
+Date: 2022-03-07
+Author: Luke Fairley
+Maintainer: Luke Fairley <l.fairley@lancaster.ac.uk>
+Description: Implementation of the Stable Matching algorithm from "Stable Marriage and Its Relation to Other Combinatorial Problems" (Knuth. D and GoldStein. M, 1996), using C++ for the main function.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.8)
+LinkingTo: Rcpp
