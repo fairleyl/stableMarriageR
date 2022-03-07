@@ -10,3 +10,4 @@ License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.8)
 LinkingTo: Rcpp
 C++ Version: C++11
+R Version: 3.6.3 (2020-02-29) -- "Holding the Windsock"
