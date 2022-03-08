@@ -41,5 +41,12 @@ pref2 = list(
 )
 
 findStableMatching(pref1, pref2)
+##Output:
+[1]]
+[1] "E" "C" "B" "D" "A"
+
+[[2]]
+[1] "e" "c" "b" "d" "a"
+
 }
 }
