@@ -30,9 +30,6 @@ Maintainer: Luke Fairley <l.fairley@lancaster.ac.uk>
   "Stable Marriage and Its Relation to Other Combinatorial Problems" (Knuth. D and GoldStein. M, 1996)
 }
 \keyword{ package }
-\seealso{
-  Optional links to other man pages
-}
 \examples{
   \dontrun{
      a = "a"
