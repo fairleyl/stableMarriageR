@@ -4,7 +4,7 @@ library("Rcpp")
 
 isValidPrefTables = function(pref1, pref2)
 {
-  #check dimensions and duplicates and CHECK ALL ELEMENTS BELONG TO OPPOSITE GENDER
+  #check dimensions and duplicates and check all elements belong to opposite gender
   n = length(pref1)
   
   if(n!=length(pref2))
@@ -50,6 +50,7 @@ isValidPrefTables = function(pref1, pref2)
   T
 }
 
+#R wrapper function for main C++ algorithm
 findStableMatching = function(pref1, pref2, checkTables = F)
 {
   if(checkTables)
