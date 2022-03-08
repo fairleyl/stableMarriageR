@@ -5,7 +5,8 @@
   Implementation of the Stable Matching algorithm
 }
 \description{
-  Implementation of the Stable Matching algorithm from "Stable Marriage and Its Relation to Other Combinatorial Problems" (Knuth. D and GoldStein. M, 1996), using C++ for the main function
+  Implementation of the Stable Matching algorithm from "Stable Marriage and Its Relation to Other Combinatorial Problems" (Knuth. D and GoldStein. M, 1996), using C++ for the main function.
+  Further details of how the underlying C++ implementation works can be found in the jupyter notebook at https://github.com/fairleyl/CPPForPythonProgrammers.
 }
 \details{
   "Preference Tables" as described in the text are here implemented as named lists of vectors of strings. An example preference table is given by 
