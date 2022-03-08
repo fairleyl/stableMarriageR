@@ -4,9 +4,13 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//define prefTable to be an unordered map with strings as keys and vectors of strings as values
 typedef std::unordered_map<std::string, std::vector<std::string> > prefTable;
+
+//define a matching to be a vector of vectors of strings
 typedef std::vector<std::vector<std::string> > matching;
 
+//Convert an Rcpp List to a prefTable
 prefTable listToPrefTable(List& pref)
 {
   CharacterVector names = pref.names();
@@ -19,6 +23,7 @@ prefTable listToPrefTable(List& pref)
   return out;
 }
 
+//Given a vector of strings, return a string of "a"s whose length is 1 greater than the longests given string
 std::string createOmega(std::vector<std::string> strings)
 {
     int n {1};
@@ -29,6 +34,7 @@ std::string createOmega(std::vector<std::string> strings)
     return omega;
 }
 
+//given a name and a matching, find "name"'s partner
 std::string findPartner(std::string name, matching match)
 {
     int n = match[0].size();
@@ -40,6 +46,7 @@ std::string findPartner(std::string name, matching match)
     throw std::invalid_argument("Name not found in matching");
 }
 
+//given a prefTable, return a vector of all keys for that prefTable
 std::vector<std::string> getPrefKeys(prefTable pref)
 {
     std::vector<std::string> out{};
@@ -47,6 +54,7 @@ std::vector<std::string> getPrefKeys(prefTable pref)
     return out;
 }
 
+//given a prefTable, return a vector of all values (vectors of strings) for that prefTable. This can be presented as a matching
 matching getPrefValues(prefTable pref)
 {
     matching out{};
@@ -54,6 +62,7 @@ matching getPrefValues(prefTable pref)
     return out;
 }
 
+//given a vector of strings and a string, return a copy of the vector with all instances of the item removed
 std::vector<std::string> removeFromList(std::vector<std::string> list, std::string item)
 {
     std::vector<std::string> out {};
@@ -61,6 +70,8 @@ std::vector<std::string> removeFromList(std::vector<std::string> list, std::stri
     return out;
 }
 
+
+//given two prefTables, return a stable matching
 matching stableMatchingC(prefTable pref1, prefTable pref2)
 {
     int n = pref1.size();
@@ -132,6 +143,7 @@ matching stableMatchingC(prefTable pref1, prefTable pref2)
     return match;
 }
 
+//given a vector of strings, return a string representation of the whole vector
 std::string toString(std::vector<std::string> input)
 {
     std::string out {"["};
@@ -139,6 +151,8 @@ std::string toString(std::vector<std::string> input)
     out.pop_back();
     return out + "]";
 }
+
+//given to Rccp List representations of preference tables, return a stable matching. Make this directly available in R
 
 // [[Rcpp::export]]
 std::vector<std::vector<std::string> > stableMatching(List& list1, List& list2)
